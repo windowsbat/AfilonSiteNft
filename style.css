@@ -1,0 +1,140 @@
+:root {
+  --bg1: #0f172a;
+  --bg2: #002b36;
+  --glass: rgba(255,255,255,0.06);
+  --accent1: linear-gradient(135deg,#8b5cf6 0%,#06b6d4 100%);
+  --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(99,102,241,0.12), transparent),
+              radial-gradient(1000px 500px at 90% 80%, rgba(6,182,212,0.06), transparent),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: #e6eef8;
+}
+
+.wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+}
+
+.card {
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  background: var(--accent1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  color: inherit;
+  backdrop-filter: blur(4px);
+  transition: transform .14s ease, box-shadow .14s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+.btn.primary {
+  background: var(--accent1);
+  color: #071024;
+}
+
+footer {
+  margin-top: 18px;
+  text-align: center;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+/* --- Анимации и контент --- */
+.fade-section {
+  margin-top: 30px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.4s ease;
+}
+.fade-section.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Контент внутри секций */
+.panel {
+  background: var(--glass);
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.02);
+  margin-bottom: 16px;
+}
+
+.panel h3 {
+  margin: 0 0 12px 0;
+}
+
+.panel p {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+@media (max-width:880px){
+  .title { font-size: 28px; }
+  .wrap { padding: 20px; }
+}
